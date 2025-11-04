@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Wheels on Fire</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Your custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center p-6 bg-white shadow">
+    <a href="../homepage_ma.html">
+      <img src="../media/logofin.png" alt="Wheels on Fire Logo" class="h-12 w-auto">
+    </a>
+    <nav>
+      <ul class="flex gap-6">
+        <li><a href="../homepage_ma.html" class="hover:text-orange-500">Home</a></li>
+        <li><a href="about_ma.html" class="hover:text-orange-500">About</a></li>
+        <li><a href="contact_ma.html" class="text-orange-500 font-semibold">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contact Form -->
+  <section class="flex flex-col md:flex-row h-auto md:h-screen">
+    <!-- Form Column -->
+    <div class="w-full md:w-1/2 p-10 flex flex-col justify-center bg-white shadow-lg">
+      <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+      <form class="space-y-5">
+        <div>
+          <label for="name" class="block text-sm font-medium">Full Name</label>
+          <input type="text" id="name" name="name" required class="w-full p-3 border rounded-lg">
+        </div>
+        <div>
+          <label for="phone" class="block text-sm font-medium">Phone Number</label>
+          <input type="tel" id="phone" name="phone" class="w-full p-3 border rounded-lg">
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium">Email Address</label>
+          <input type="email" id="email" name="email" required class="w-full p-3 border rounded-lg">
+        </div>
+        <div>
+          <label for="query" class="block text-sm font-medium">Your Query</label>
+          <textarea id="query" name="query" rows="4" class="w-full p-3 border rounded-lg"></textarea>
+        </div>
+        <div>
+          <label for="car" class="block text-sm font-medium">Car (Optional)</label>
+          <select id="car" name="car" class="w-full p-3 border rounded-lg">
+            <option value="">-- Select a Car --</option>
+            <option value="mustang">Porsche 911 Turbo S</option>
+            <option value="featured1">BMW M4</option>
+            <option value="featured2">Ferrari</option>
+            <option value="featured3">Audi RS6</option>
+          </select>
+        </div>
+        <button type="submit" class="w-full py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600">
+          Submit
+        </button>
+      </form>
+    </div>
+
+    <!-- Image Column -->
+    <div class="hidden md:block md:w-1/2">
+      <img id="carImage" src="../media/default-car.jpg" alt="Selected Car" class="w-full h-full object-cover">
+    </div>
+  </section>
+
+  <footer class="text-center py-6 text-gray-500 text-sm">
+    © 2025 Wheels on Fire — All rights reserved.
+  </footer>
+
+  <script>
+    const carSelect = document.getElementById('car');
+    const carImage = document.getElementById('carImage');
+
+    const carImages = {
+      mustang: '../media/porschebg.jpg',
+      featured1: '../media/bmwm4.jpg',
+      featured2: '../media/ferrari.jpg',
+      featured3: '../media/audipic.jpg'
+    };
+
+    carSelect.addEventListener('change', () => {
+      const selected = carSelect.value;
+      carImage.src = carImages[selected] || '../media/default-car.jpg';
+    });
+  </script>
+
+</body>
+</html>
+
+    
+  

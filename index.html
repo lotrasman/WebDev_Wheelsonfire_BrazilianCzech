@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+   <link rel="stylesheet" href="styles.css">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wheels on Fire — Car of the Week</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>/*
+  :root {
+    --bg-dark: #f2f2f2;
+    --bg: #ffffff;
+    --bg-light: #fcfcfc;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --highlight: #f05a28;
+    --highlight-hover: #d84f1e;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-med: rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+  }
+
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+ 
+  header {
+    width: 100vw;
+    background: var(--bg-light);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+  }
+
+  .logo img {
+    height: 47px;
+  }
+
+  nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav li {
+    list-style: none;
+  }
+
+  nav a {
+    padding: 0.5rem 0.9rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  nav a:hover {
+    background: rgba(240, 90, 40, 0.1);
+    color: var(--highlight);
+  }
+
+  #darkModeToggle {
+    background: #222;
+    color: #fff;
+    border: none;
+    padding: 0.45rem 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  #darkModeToggle:hover {
+    background: var(--highlight);
+  }
+
+ 
+  .hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    text-align: center;
+    background: url('../media/hero.gif') center center / cover no-repeat;
+    color: white;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+  }
+
+  .hero h1,
+  .hero p,
+  .cta-btn {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: #fff;
+  }
+
+  .cta-btn {
+    background: var(--highlight);
+    color: white;
+    padding: 0.9rem 1.8rem;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .cta-btn:hover {
+    background: var(--highlight-hover);
+  }
+
+  .car-of-week {
+  background: var(--bg-light);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  margin: 3rem auto;
+  text-align: center;
+  max-width: 900px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  color: var(--text);
+}
+
+.car-of-week:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.car-of-week h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--highlight);
+  margin-bottom: 1rem;
+}
+
+.car-of-week p {
+  font-size: 1.1rem;
+  font-family: 'Georgia', serif;
+  color: var(--text-muted);
+}
+
+.car-of-week img {
+  border-radius: 10px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+ 
+  .featured-cars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem auto;
+    padding: 0 5%;
+  }
+
+  .featured-car {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: 0 2px 8px var(--shadow-light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .featured-car:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px var(--shadow-med);
+  }
+
+  .featured-car img {
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+  }
+
+ 
+  .reviews {
+    max-width: 1100px;
+    margin: 3rem auto;
+    text-align: center;
+    padding: 0 5%;
+  }
+
+  .reviews h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .review-slider {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 1rem 0;
+  }
+
+  .review {
+    flex: 0 0 300px;
+    background: var(--bg);
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px var(--shadow-light);
+    scroll-snap-align: center;
+  }
+
+  .review p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+
+  .review strong {
+    display: block;
+    margin-top: 0.8rem;
+    color: var(--text);
+  }
+
+  
+  footer {
+    margin-top: 4rem;
+    padding: 2rem 5%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    background: var(--bg-light);
+    border-top: 1px solid #a6a4a4;
+  }
+
+  
+  .dark-mode {
+    --bg-dark: #111;
+    --bg: #222;
+    --bg-light: #333;
+    --text: #918f8f;
+    --text-muted: #aaa;
+  }
+
+  .dark-mode body {
+    background: var(--bg-dark);
+    color: var(--text);
+  }
+
+  .dark-mode .hero p {
+    color: #6e6b6b;
+  }
+
+  .dark-mode nav a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #a73c18;
+  }*/
+</style>
+
+</head>
+
+<body>
+  <div class="flexbox">
+    <header>
+      <div class="logo">
+        <img src="media/logofin.png" alt="Logo placeholder" />
+      </div>
+      <nav>
+        <!-- 🔗 These links connect your pages -->
+        <li><a href="homepage_ma.html">Home</a></li>
+        <li><a href="pages.html/about_ma.html">About</a></li>
+        <li><a href="pages.html/contact_ma.html">Contact</a></li>
+        <button id="darkModeToggle"> </button>
+      </nav>
+    </header>
+
+    <section class="hero" id="home">
+      <h1>Premium Cars. Expertly Curated.</h1>
+      <p>Showcasing finely tuned, high-quality vehicles in Dublin and surrounding areas.</p>
+      <a class="cta-btn" href="#collection">View Collection</a>
+    </section>
+
+    <section class="car-of-week" id="collection">
+      <h2>Car of the Week</h2>
+      <img src="media/porschebg.jpg" alt="Porsche 911 Turbo S" />
+      <p><strong>Porsche 911 Turbo S</strong><br>Price: €248,999</p>
+    </section>
+
+    <section class="featured-cars">
+      <div class="featured-car">
+        <img src="media/bmwm4.jpg" alt="BMW M4" />
+        <h3>BMW M4</h3>
+        <p>Sleek, stylish, and built to impress.</p>
+      </div>
+      <div class="featured-car">
+        <img src="media/ferrari.jpg" alt="Ferrari" />
+        <h3>Ferrari</h3>
+        <p>Performance that speaks for itself.</p>
+      </div>
+      <div class="featured-car">
+        <img src="media/audipic.jpg" alt="Audi RS6" />
+        <h3>Audi RS6</h3>
+        <p>Modern engineering meets timeless design.</p>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <h2>What Our Clients Say</h2>
+      <div class="review-slider">
+        <div class="review">
+          <p>“Absolutely amazing service. Found the perfect car.”</p>
+          <strong>— Sarah M.</strong>
+        </div>
+        <div class="review">
+          <p>“The car drives like a dream. 10/10.”</p>
+          <strong>— David R.</strong>
+        </div>
+        <div class="review">
+          <p>“Professional and easy to deal with.”</p>
+          <strong>— Emily T.</strong>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="yeardisplay"></span> Wheels on Fire — All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    // Set current year
+    document.getElementById('yeardisplay').textContent = new Date().getFullYear();
+
+    // Dark mode toggle
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('click', function () {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>
