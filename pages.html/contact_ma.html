@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact | Wheels on Fire</title>
+  <link rel="stylesheet" href="../styles.css" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -11,9 +12,47 @@
   <!-- Your custom CSS -->
   <link rel="stylesheet" href="../styles.css">
 </head>
+<body class="page-shell">
+  <div class="page-container">
+    <header>
+      <div class="logo">
+        <a href="../index.html">
+          <img src="../media/logofin.png" alt="Wheels on Fire logo" />
+        </a>
+      </div>
+      <nav>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="collection_ma.html">Collection</a></li>
+        <li><a href="about_ma.html">About</a></li>
+        <li><a class="active" href="contact_ma.html">Contact</a></li>
+        <button id="darkModeToggle" aria-label="Toggle dark mode"></button>
+      </nav>
+    </header>
 
-<body class="bg-gray-100 text-gray-800">
+    <main class="subpage-content contact-page">
+      <section class="subpage-hero contact-hero">
+        <p class="eyebrow">Visit. Call. Configure.</p>
+        <h1>Let’s secure the next car in your collection.</h1>
+        <p>Reach out for private appointments, sourcing requests, or to arrange a viewing of the current lineup.</p>
+      </section>
 
+      <section class="contact-info-grid">
+        <article class="info-card">
+          <p class="eyebrow">Showroom</p>
+          <h3>Dublin Docklands</h3>
+          <p>Unit 6, Spencer Dock<br />Dublin 1, Ireland</p>
+        </article>
+        <article class="info-card">
+          <p class="eyebrow">Hours</p>
+          <h3>By appointment</h3>
+          <p>Mon–Fri · 10am – 7pm<br />Sat · 11am – 4pm</p>
+        </article>
+        <article class="info-card">
+          <p class="eyebrow">Concierge</p>
+          <h3>+353 1 555 0192</h3>
+          <p>hello@wheelsonfire.ie</p>
+        </article>
+      </section>
   <!-- Navbar -->
   <header class="flex justify-between items-center p-6 bg-white shadow">
     <a href="../index.html">
@@ -28,73 +67,121 @@
     </nav>
   </header>
 
-  <!-- Contact Form -->
-  <section class="flex flex-col md:flex-row h-auto md:h-screen">
-    <!-- Form Column -->
-    <div class="w-full md:w-1/2 p-10 flex flex-col justify-center bg-white shadow-lg">
-      <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-      <form class="space-y-5">
-        <div>
-          <label for="name" class="block text-sm font-medium">Full Name</label>
-          <input type="text" id="name" name="name" required class="w-full p-3 border rounded-lg">
-        </div>
-        <div>
-          <label for="phone" class="block text-sm font-medium">Phone Number</label>
-          <input type="tel" id="phone" name="phone" class="w-full p-3 border rounded-lg">
-        </div>
-        <div>
-          <label for="email" class="block text-sm font-medium">Email Address</label>
-          <input type="email" id="email" name="email" required class="w-full p-3 border rounded-lg">
-        </div>
-        <div>
-          <label for="query" class="block text-sm font-medium">Your Query</label>
-          <textarea id="query" name="query" rows="4" class="w-full p-3 border rounded-lg"></textarea>
-        </div>
-        <div>
-          <label for="car" class="block text-sm font-medium">Car (Optional)</label>
-          <select id="car" name="car" class="w-full p-3 border rounded-lg">
-            <option value="">-- Select a Car --</option>
-            <option value="mustang">Porsche 911 Turbo S</option>
-            <option value="featured1">BMW M4</option>
-            <option value="featured2">Ferrari</option>
-            <option value="featured3">Audi RS6</option>
-          </select>
-        </div>
-        <button type="submit" class="w-full py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600">
-          Submit
-        </button>
-      </form>
-    </div>
+      <section class="contact-wrap">
+        <form class="contact-form" aria-label="Contact form">
+          <h2>Book a conversation</h2>
+          <div class="form-field">
+            <label for="name">Full name</label>
+            <input id="name" type="text" required placeholder="Aoife Byrne" />
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" type="email" required placeholder="you@email.com" />
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" placeholder="(+353) 86 123 4567" />
+          </div>
+          <div class="form-field">
+            <label for="car">Vehicle of interest</label>
+            <select id="car">
+              <option value="" selected>Select a model</option>
+              <option value="porsche">Porsche 911 Turbo S</option>
+              <option value="bmw">BMW M4 Competition</option>
+              <option value="ferrari">Ferrari Roma</option>
+              <option value="audi">Audi RS6 Avant</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="message">How can we help?</label>
+            <textarea id="message" rows="4" placeholder="Viewing request, sourcing brief, trade-in details..." required></textarea>
+          </div>
+          <button type="submit" class="cta-btn">Submit request</button>
+        </form>
 
-    <!-- Image Column -->
-    <div class="hidden md:block md:w-1/2">
-      <img id="carImage" src="../media/default-car.jpg" alt="Selected Car" class="w-full h-full object-cover">
-    </div>
-  </section>
+        <aside class="contact-panel" aria-live="polite">
+          <div class="panel-header">
+            <p class="eyebrow">Currently previewing</p>
+            <h3 id="previewTitle">Select a model</h3>
+          </div>
+          <figure class="car-preview">
+            <img id="previewImage" src="../media/porschebg.jpg" alt="Selected car preview" />
+          </figure>
+          <div class="panel-body" id="previewBody">
+            Choose a vehicle from the form to see highlight stats and the exact colorway available in the showroom.
+          </div>
+          <ul class="panel-list" id="previewStats"></ul>
+        </aside>
+      </section>
+    </main>
 
-  <footer class="text-center py-6 text-gray-500 text-sm">
-    © 2025 Wheels on Fire — All rights reserved.
-  </footer>
+    <footer>
+      © <span id="subpageYear"></span> Wheels on Fire — All rights reserved.
+    </footer>
+  </div>
 
   <script>
-    const carSelect = document.getElementById('car');
-    const carImage = document.getElementById('carImage');
+    const yearSpan = document.getElementById('subpageYear');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
 
-    const carImages = {
-      mustang: '../media/porschebg.jpg',
-      featured1: '../media/bmwm4.jpg',
-      featured2: '../media/ferrari.jpg',
-      featured3: '../media/audipic.jpg'
+    const toggle = document.getElementById('darkModeToggle');
+    if (toggle) {
+      toggle.addEventListener('click', () => document.body.classList.toggle('dark-mode'));
+    }
+
+    const previewTitle = document.getElementById('previewTitle');
+    const previewBody = document.getElementById('previewBody');
+    const previewImage = document.getElementById('previewImage');
+    const previewStats = document.getElementById('previewStats');
+    const carSelect = document.getElementById('car');
+
+    const previewContent = {
+      porsche: {
+        title: 'Porsche 911 Turbo S',
+        copy: 'Carbon ceramic brakes, aero kit, and Chalk over Bordeaux leather interior.',
+        img: '../media/porschebg.jpg',
+        stats: ['0-100 km/h in 2.7s', '650 hp · AWD', '4,500 km on the clock']
+      },
+      bmw: {
+        title: 'BMW M4 Competition',
+        copy: 'Frozen Portimao Blue with M Carbon bucket seats and Driver’s Package.',
+        img: '../media/bmwm4.jpg',
+        stats: ['510 hp · RWD', 'ZCP suspension', 'Extended BMW warranty']
+      },
+      ferrari: {
+        title: 'Ferrari Roma',
+        copy: 'Rosso Fiorano over Sabbia leather with Magneride dual-mode dampers.',
+        img: '../media/ferrari.jpg',
+        stats: ['620 cv V8', 'Active aero flaps', '1-owner · Ceramic coated']
+      },
+      audi: {
+        title: 'Audi RS6 Avant',
+        copy: 'Nardo Grey with Black Optics and RS Design interior package.',
+        img: '../media/audipic.jpg',
+        stats: ['591 hp · Quattro', 'Dynamic Ride Control', 'Panoramic roof']
+      }
     };
 
-    carSelect.addEventListener('change', () => {
-      const selected = carSelect.value;
-      carImage.src = carImages[selected] || '../media/default-car.jpg';
+    carSelect?.addEventListener('change', (event) => {
+      const selected = previewContent[event.target.value];
+
+      if (!selected) {
+        previewTitle.textContent = 'Select a model';
+        previewBody.textContent = 'Choose a vehicle from the form to see highlight stats and the exact colorway available in the showroom.';
+        previewImage.src = '../media/porschebg.jpg';
+        previewImage.alt = 'Selected car preview';
+        previewStats.innerHTML = '';
+        return;
+      }
+
+      previewTitle.textContent = selected.title;
+      previewBody.textContent = selected.copy;
+      previewImage.src = selected.img;
+      previewImage.alt = selected.title;
+      previewStats.innerHTML = selected.stats.map((item) => `<li>${item}</li>`).join('');
     });
   </script>
-
 </body>
 </html>
-
-    
-  
