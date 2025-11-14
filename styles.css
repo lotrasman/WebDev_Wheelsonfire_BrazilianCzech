@@ -116,7 +116,7 @@ nav a:hover {
 }
 
 .hero {
-  width: 100vw;
+  width: 99vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   text-align: center;
