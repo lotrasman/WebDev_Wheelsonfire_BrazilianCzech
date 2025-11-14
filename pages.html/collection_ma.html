@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Collection | Wheels on Fire</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="flexbox">
+    <header>
+      <div class="logo">
+        <a href="../index.html">
+          <img src="../media/logofin.png" alt="Wheels on Fire logo" />
+        </a>
+      </div>
+      <nav>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="collection_ma.html">Collection</a></li>
+        <li><a href="about_ma.html">About</a></li>
+        <li><a href="contact_ma.html">Contact</a></li>
+        <button id="darkModeToggle"></button>
+      </nav>
+    </header>
+
+    <main class="collection-page">
+      <section class="collection-header" id="collection">
+        <h1>Available Vehicles</h1>
+        <p>Browse this week's highlighted models. Every car is detailed, inspected, and ready for delivery.</p>
+      </section>
+
+      <section class="collection-grid">
+        <article class="collection-card">
+          <img src="../media/porschebg.jpg" alt="Porsche 911 Turbo S" />
+          <div class="collection-card-body">
+            <h3>Porsche 911 Turbo S</h3>
+            <p>Ultimate everyday supercar performance with 641 hp.</p>
+            <div class="collection-price">
+              <span>From</span>
+              <strong>€248,999</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <img src="../media/bmwm4.jpg" alt="BMW M4 Competition" />
+          <div class="collection-card-body">
+            <h3>BMW M4 Competition</h3>
+            <p>Sharp handling, aggressive styling, and all-weather grip.</p>
+            <div class="collection-price">
+              <span>From</span>
+              <strong>€132,750</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <img src="../media/ferrari.jpg" alt="Ferrari F8 Tributo" />
+          <div class="collection-card-body">
+            <h3>Ferrari F8 Tributo</h3>
+            <p>Mid-engine V8 drama with race-bred aerodynamics.</p>
+            <div class="collection-price">
+              <span>From</span>
+              <strong>€279,500</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <img src="../media/audipic.jpg" alt="Audi RS6 Avant" />
+          <div class="collection-card-body">
+            <h3>Audi RS6 Avant</h3>
+            <p>Supercar pace blended with family-friendly practicality.</p>
+            <div class="collection-price">
+              <span>From</span>
+              <strong>€167,900</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <img src="../media/audir8.jpg" alt="Audi R8 V10" />
+          <div class="collection-card-body">
+            <h3>Audi R8 V10</h3>
+            <p>Hand-built V10 soundtrack and quattro confidence.</p>
+            <div class="collection-price">
+              <span>From</span>
+              <strong>€214,000</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <img src="../media/porschebg.jpg" alt="Porsche Taycan Turbo" />
+          <div class="collection-card-body">
+            <h3>Porsche Taycan Turbo</h3>
+            <p>All-electric, four-door performance with instant torque.</p>
+            <div class="collection-price">
+              <span>From</span>
+              <strong>€159,995</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <img src="../media/ferrari.jpg" alt="Ferrari Roma" />
+          <div class="collection-card-body">
+            <h3>Ferrari Roma</h3>
+            <p>Timeless grand tourer with a refined twin-turbo V8.</p>
+            <div class="collection-price">
+              <span>From</span>
+              <strong>€209,000</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <img src="../media/bmwm4.jpg" alt="BMW i4 M50" />
+          <div class="collection-card-body">
+            <h3>BMW i4 M50</h3>
+            <p>Electric gran coupe poise with instant M-division thrust.</p>
+            <div class="collection-price">
+              <span>From</span>
+              <strong>€76,995</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <img src="../media/audir8.jpg" alt="Audi e-tron GT" />
+          <div class="collection-card-body">
+            <h3>Audi e-tron GT</h3>
+            <p>Four-door coupe style backed by 800-volt charging tech.</p>
+            <div class="collection-price">
+              <span>From</span>
+              <strong>€124,999</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="yeardisplay"></span> Wheels on Fire — All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('yeardisplay').textContent = new Date().getFullYear();
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('click', function () {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>
