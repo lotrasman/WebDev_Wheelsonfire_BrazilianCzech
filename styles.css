@@ -18,7 +18,7 @@
   --shadow-med: rgba(0, 0, 0, 0.1);
   --border: #e5e5e5;
   --radius: 8px;
-  --hero-gif: url('media/hero.gif');
+  --hero-gif: url('media/carhomepage.jpeg');
   --hero-height: 85vh;
 }
 
@@ -121,7 +121,7 @@ nav a.active {
 }
 
 .hero {
-  width: 100vw;
+  width: 99vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   text-align: center;
