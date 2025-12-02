@@ -130,8 +130,6 @@
     const previewBody = document.getElementById('previewBody');
     const previewImage = document.getElementById('previewImage');
     const previewStats = document.getElementById('previewStats');
-    const contactForm = document.querySelector('.contact-form');
-    const formSuccessMessage = document.getElementById('formSuccessMessage');
     const reasonSelect = document.getElementById('reason');
     const carField = document.getElementById('carField');
     const carSelect = document.getElementById('car');
@@ -188,43 +186,14 @@
       previewStats.innerHTML = selected.stats.map((item) => `<li>${item}</li>`).join('');
     });
 
-    const hideSuccessMessage = () => {
-      if (formSuccessMessage) {
-        formSuccessMessage.style.display = 'none';
-      }
-    };
-
-    hideSuccessMessage();
-
     reasonSelect?.addEventListener('change', (event) => {
-      hideSuccessMessage();
       const isVehicleInterest = event.target.value === 'vehicle';
       carField.style.display = isVehicleInterest ? 'flex' : 'none';
-      carSelect.required = isVehicleInterest;
 
       if (!isVehicleInterest) {
         carSelect.value = '';
         resetPreview();
       }
-    });
-
-    contactForm?.addEventListener('input', hideSuccessMessage);
-
-    contactForm?.addEventListener('submit', (event) => {
-      event.preventDefault();
-
-      if (!contactForm.checkValidity()) {
-        contactForm.reportValidity();
-        return;
-      }
-
-      if (formSuccessMessage) {
-        formSuccessMessage.style.display = 'block';
-      }
-      contactForm.reset();
-      carField.style.display = 'none';
-      carSelect.required = false;
-      resetPreview();
     });
   </script>
 </body>
