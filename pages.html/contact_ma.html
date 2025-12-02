@@ -67,10 +67,16 @@
             <input id="email" type="email" required placeholder="you@email.com" />
           </div>
           <div class="form-field">
-            <label for="phone">Phone</label>
-            <input id="phone" type="tel" placeholder="(+353) 86 123 4567" />
+            <label for="reason">Reason for inquiry</label>
+            <select id="reason" required>
+              <option value="" selected>Select a reason</option>
+              <option value="general">General</option>
+              <option value="feedback">Feedback</option>
+              <option value="support">Technical support</option>
+              <option value="vehicle">Interest in a vehicle</option>
+            </select>
           </div>
-          <div class="form-field">
+          <div class="form-field" id="carField">
             <label for="car">Vehicle of interest</label>
             <select id="car">
               <option value="" selected>Select a model</option>
@@ -123,6 +129,8 @@
     const previewBody = document.getElementById('previewBody');
     const previewImage = document.getElementById('previewImage');
     const previewStats = document.getElementById('previewStats');
+    const reasonSelect = document.getElementById('reason');
+    const carField = document.getElementById('carField');
     const carSelect = document.getElementById('car');
 
     const previewContent = {
@@ -152,15 +160,21 @@
       }
     };
 
+    const resetPreview = () => {
+      previewTitle.textContent = 'Select a model';
+      previewBody.textContent = 'Choose a vehicle from the form to see highlight stats and the exact colorway available in the showroom.';
+      previewImage.src = '../media/porschebg.jpg';
+      previewImage.alt = 'Selected car preview';
+      previewStats.innerHTML = '';
+    };
+
+    carField.style.display = 'none';
+
     carSelect?.addEventListener('change', (event) => {
       const selected = previewContent[event.target.value];
 
       if (!selected) {
-        previewTitle.textContent = 'Select a model';
-        previewBody.textContent = 'Choose a vehicle from the form to see highlight stats and the exact colorway available in the showroom.';
-        previewImage.src = '../media/porschebg.jpg';
-        previewImage.alt = 'Selected car preview';
-        previewStats.innerHTML = '';
+        resetPreview();
         return;
       }
 
@@ -169,6 +183,16 @@
       previewImage.src = selected.img;
       previewImage.alt = selected.title;
       previewStats.innerHTML = selected.stats.map((item) => `<li>${item}</li>`).join('');
+    });
+
+    reasonSelect?.addEventListener('change', (event) => {
+      const isVehicleInterest = event.target.value === 'vehicle';
+      carField.style.display = isVehicleInterest ? 'flex' : 'none';
+
+      if (!isVehicleInterest) {
+        carSelect.value = '';
+        resetPreview();
+      }
     });
   </script>
 </body>
